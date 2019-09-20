@@ -1,0 +1,95 @@
+public class TicTacToeBoard {
+    private int N = 3; //Default board size
+    private Cell[][] grid;
+
+    public TicTacToeBoard() {
+        grid =  new Cell[N][N];
+        for(int i = 0; i < N; i++)
+            for (int j = 0; j < N; j++)
+                grid[i][j] = new Cell(i, j);
+    }
+
+    public TicTacToeBoard(int n) {
+        N = n;
+        grid = new Cell[N][N];
+        for(int i = 0; i < N; i++)
+            for (int j = 0; j < N; j++)
+                grid[i][j] = new Cell(i, j);
+    }
+
+    public boolean isValidMove(Coordinates coordinats)
+    {
+        int row = coordinats.getRow();
+        int col = coordinats.getColumn();
+        if(row >= N || col >= N)
+            return false;
+        return grid[row][col].toString().equals("-");
+    }
+
+    public void makeMove(Coordinates coordinate, char playerSymbol)
+    {
+        if(isValidMove(coordinate))
+        {
+            grid[coordinate.getRow()][coordinate.getColumn()].setSymbol(playerSymbol);
+        }
+    }
+
+    public boolean isWinner(char playerSymbol) {
+        String winString = "";
+        //Generate a string that would represent a win
+        for (int i = 0; i < N; i++)
+            winString += playerSymbol;
+
+        String curRow = "";
+        //Check each row
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                curRow += grid[i][j];
+            }
+            if (curRow.equals(winString))
+                return true;
+            curRow = "";
+        }
+
+        //Check each column
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                curRow += grid[j][i];
+            }
+            if (curRow.equals(winString))
+                return true;
+            curRow = "";
+        }
+
+        //Check each diagonal
+        String curAltRow = "";
+        for (int i = 0; i < N; i++)
+        {
+            curRow += grid[i][i];
+            curAltRow += grid[N-i-1][i];
+        }
+        if(curRow.equals(winString) || curAltRow.equals(winString))
+            return true;
+
+        //If no win was detected, return false
+        return false;
+    }
+
+    public String toString()
+    {
+        String topRow = " ";
+        for(int i = 0; i < N; i++)
+        {
+            topRow += " " + i;
+        }
+        String retString = topRow + "\n";
+        for(int i = 0; i < N; i++){
+            retString += i;
+            for(int j = 0; j < N; j++){
+                retString += " " + grid[i][j];
+            }
+            retString += "\n";
+        }
+        return retString + "\n";
+    }
+}
