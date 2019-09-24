@@ -1,9 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -62,6 +59,23 @@ public class Main {
         Collections.sort(sqrs);
         System.out.println(sqrs);
 
+        Scanner kb = new Scanner(System.in);
+        int userNum = 0;
 
+        System.out.print("Enter a number: ");
+        boolean goodInput = false;
+        while(!goodInput) {
+            try {
+                userNum = kb.nextInt();
+                goodInput = true;
+            } catch (InputMismatchException e) {
+                System.out.print("I said number!\nPlease enter a number: ");
+            } finally {
+                kb.nextLine(); //<-- clear that buffer!
+            }
+        }
+
+
+        System.out.println("thank you");
     }
 }
