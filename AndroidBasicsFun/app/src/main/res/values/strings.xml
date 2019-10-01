@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AndroidBasicsFun</string>
+    <string name="hello_string">Happy Tuesday</string>
 </resources>
