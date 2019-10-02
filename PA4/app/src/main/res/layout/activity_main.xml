@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp">
+
+        <TextView
+            android:id="@+id/letterTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/grade_prompt" />
+
+        <EditText
+            android:id="@+id/letterEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/grade_hint"
+            android:inputType="textPersonName"
+            android:importantForAutofill="no"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp">
+        <TextView
+            android:id="@+id/minAvgText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/average_prompt" />
+
+        <EditText
+            android:id="@+id/minAvgEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/average_hint"
+            android:inputType="textPersonName"
+            android:importantForAutofill="no"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp">
+        <TextView
+            android:id="@+id/curAvgText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/curr_average_prompt" />
+
+        <EditText
+            android:id="@+id/curAgvEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/average_hint"
+            android:inputType="textPersonName"
+            android:importantForAutofill="no"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp">
+        <TextView
+            android:id="@+id/finalText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/final_prompt" />
+
+        <EditText
+            android:id="@+id/finalEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/final_hint"
+            android:inputType="textPersonName"
+            android:importantForAutofill="no"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/calcGradeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/calc_grade_button"
+        android:layout_marginTop="10dp"/>
+
+</LinearLayout>
