@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Event Handling fun</string>
+    <string name="login_prompt">Login to Continue</string>
+    <string name="login_button">Login</string>
+    <string name="username_prompt">Enter your username</string>
+    <string name="password_prompt">Enter your password</string>
+</resources>
