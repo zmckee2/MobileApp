@@ -9,7 +9,7 @@
     >
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="10dp"
@@ -17,34 +17,37 @@
 
         <TextView
             android:id="@+id/letterTextView"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/grade_prompt" />
+            android:text="@string/grade_prompt"
+            android:textSize="18sp"/>
 
         <EditText
             android:id="@+id/letterEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
             android:ems="10"
             android:hint="@string/grade_hint"
-            android:inputType="textPersonName"
-            android:importantForAutofill="no"/>
+            android:importantForAutofill="no"
+            android:inputType="textPersonName" />
 
 
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="5dp">
         <TextView
             android:id="@+id/minAvgText"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/average_prompt" />
+            android:text="@string/average_prompt"
+            android:textSize="18sp"/>
 
         <EditText
             android:id="@+id/minAvgEditText"
@@ -52,21 +55,23 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/average_hint"
-            android:inputType="textPersonName"
-            android:importantForAutofill="no"/>
+            android:inputType="numberDecimal"
+            android:importantForAutofill="no"
+            android:layout_marginLeft="3dp"/>
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="5dp">
         <TextView
             android:id="@+id/curAvgText"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/curr_average_prompt" />
+            android:text="@string/curr_average_prompt"
+            android:textSize="18sp"/>
 
         <EditText
             android:id="@+id/curAgvEditText"
@@ -74,21 +79,24 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/average_hint"
-            android:inputType="textPersonName"
-            android:importantForAutofill="no"/>
+            android:inputType="numberDecimal"
+            android:importantForAutofill="no"
+            android:layout_marginLeft="3dp"
+            android:textSize="18sp"/>
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="5dp">
         <TextView
             android:id="@+id/finalText"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/final_prompt" />
+            android:text="@string/final_prompt"
+            android:textSize="18sp"/>
 
         <EditText
             android:id="@+id/finalEditText"
@@ -96,8 +104,10 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/final_hint"
-            android:inputType="textPersonName"
-            android:importantForAutofill="no"/>
+            android:inputType="numberDecimal"
+            android:importantForAutofill="no"
+            android:layout_marginLeft="3dp"
+            />
     </LinearLayout>
 
     <Button
@@ -106,5 +116,18 @@
         android:layout_height="wrap_content"
         android:text="@string/calc_grade_button"
         android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/resultPercent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="18sp"/>
+    <TextView
+        android:id="@+id/resultGrade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="72sp"/>
 
 </LinearLayout>
