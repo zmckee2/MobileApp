@@ -2,14 +2,35 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:layout_width="200dp"
+    android:layout_height="400dp"
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryDark"
+    android:layout_margin="40dp"
+    android:padding="40dp"
+    android:layout_gravity="bottom|end"
+    android:gravity="bottom|end"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/toggleButton"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:gravity="top|start"
+        android:text="@string/on"
+        android:layout_marginBottom="10dp"
+        />
+    <Button
+        android:id="@+id/toggleButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="@string/on"
+        android:visibility="invisible"/>
+    <Button
+        android:id="@+id/toggleButton3"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"
         android:text="@string/on" />
