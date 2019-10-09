@@ -4,8 +4,6 @@ public class GradeCalculator {
     private float minAvg;
     private float curAvg;
     private float finalPercent;
-    private float[] grades = {93.0f, 90.0f, 87.0f, 83.0f, 80.0f, 77.0f,
-                              73.0f, 70.0f, 67.0f, 60.0f};
 
     public GradeCalculator(float minAvg, float curAvg, float finalPercent) {
         this.minAvg = minAvg;
@@ -39,6 +37,7 @@ public class GradeCalculator {
 
     public float calculateFinalGrade()
     {
-        return 0.0f;
+        float nonFinalPercent = (100 - finalPercent)/100;
+        return ((minAvg - curAvg * nonFinalPercent) / (finalPercent/100));
     }
 }
