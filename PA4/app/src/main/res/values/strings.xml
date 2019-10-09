@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Grade Calculator</string>
+    <string name="grade_prompt">Desired Grade:</string>
+    <string name="grade_hint">character letter grade here</string>
+    <string name="average_prompt">Min average required:</string>
+    <string name="average_hint">numeric average here</string>
+    <string name="curr_average_prompt">Current average required:</string>
+    <string name="final_prompt">Final percentage weight:</string>
+    <string name="final_hint">final % here</string>
+    <string name="calc_grade_button">Calculate!</string>
+</resources>
