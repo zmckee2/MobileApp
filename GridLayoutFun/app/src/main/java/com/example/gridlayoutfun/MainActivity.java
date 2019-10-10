@@ -9,10 +9,11 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    //<div>Icons made by <a href="https://www.flaticon.com/authors/nikita-golubev" title="Nikita Golubev">Nikita Golubev</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div>
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_grid2); //<--- change the layout
+        setContentView(R.layout.activity_main_grid3); //<--- change the layout
 
 
         View.OnClickListener listener = new View.OnClickListener() {
