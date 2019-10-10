@@ -13,7 +13,8 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="5dp">
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp">
 
         <TextView
             android:id="@+id/letterTextView"
@@ -41,7 +42,8 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="5dp">
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp">
         <TextView
             android:id="@+id/minAvgText"
             android:layout_width="wrap_content"
@@ -65,7 +67,8 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="5dp">
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp">
         <TextView
             android:id="@+id/curAvgText"
             android:layout_width="wrap_content"
@@ -89,8 +92,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="5dp">
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp">
         <TextView
             android:id="@+id/finalText"
             android:layout_width="wrap_content"
@@ -115,19 +119,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/calc_grade_button"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/whiteText"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"/>
 
     <TextView
         android:id="@+id/resultPercent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textSize="18sp"/>
+        android:textSize="16sp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"/>
     <TextView
         android:id="@+id/resultGrade"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textSize="72sp"/>
+        android:textSize="72sp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"/>
 
 </LinearLayout>
