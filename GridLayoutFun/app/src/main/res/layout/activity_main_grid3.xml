@@ -7,36 +7,51 @@
     android:columnCount="3"
     tools:context=".MainActivity">
 
-    <Button
+    <ImageButton
         android:id="@+id/button1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_columnSpan="2"
         android:layout_columnWeight="2"
         android:layout_rowWeight="1"
-        android:text="Button 1"/>
-    <Button
+        android:src="@drawable/hold"
+        android:scaleType="fitCenter"
+        android:contentDescription="Hand"
+        android:tag="Button 1"/>
+
+    <ImageButton
         android:id="@+id/button2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_columnWeight="1"
         android:layout_rowWeight="2"
         android:layout_rowSpan="2"
-        android:text="Button 2"/>
-    <Button
+        android:src="@drawable/music_player"
+        android:scaleType="fitCenter"
+        android:contentDescription="Music Note"
+        android:tag="Button 2"/>
+
+    <ImageButton
         android:id="@+id/button3"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
-        android:text="Button 3"/>
-    <Button
+        android:src="@drawable/picture"
+        android:scaleType="fitCenter"
+        android:contentDescription="Image image"
+        android:tag="Button 3"/>
+
+    <ImageButton
         android:id="@+id/button4"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
-        android:text="Button 4"/>
+        android:src="@drawable/wifi"
+        android:scaleType="fitCenter"
+        android:contentDescription="WiFi waves"
+        android:tag="Button 4"/>
 
 
 </GridLayout>
