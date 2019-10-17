@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -17,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
     //Our activity might have multiple requests for activity results
     //the same callback onActivityResult is called for all requests
 
-
+    //Whenever you use an intent, you go outside the app to decide what
+    //activity to use, even if it's the same app
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -36,7 +38,28 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        findViewById(R.id.sendMessage).setOnClickListener(new View.OnClickListener(){
 
+            @Override
+            public void onClick(View v) {
+                //5. implicit intent example 2
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain"); //mime type (media)
+                intent.putExtra(Intent.EXTRA_TEXT, "message message message"); //The actual message
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.guHome).setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                Uri guUri = Uri.parse("https://www.gonzaga.edu");
+                intent.setData(guUri);
+                startActivity(intent);
+            }
+        });
         findViewById(R.id.secondActivity).setOnClickListener(new View.OnClickListener(){
 
             @Override
