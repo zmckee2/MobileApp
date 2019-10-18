@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AdapterViewFun</string>
+    <string-array name="month_arr">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+    </string-array>
+</resources>
