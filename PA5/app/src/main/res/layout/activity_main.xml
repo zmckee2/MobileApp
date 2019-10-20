@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="1"
+    tools:context=".WelcomeActivity"
+    android:padding="10dp"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="@string/instructions"
+        android:textSize="18dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/player1Label"
+            android:textSize="18dp"/>
+
+        <EditText
+            android:id="@+id/player1NameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/player1Hint"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/player2Label"
+            android:textSize="18dp"/>
+
+        <EditText
+            android:id="@+id/player2NameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/player2Hint"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/playButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center"
+        android:text="@string/playPrompt"/>
+
+</GridLayout>

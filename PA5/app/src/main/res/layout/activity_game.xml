@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="3"
+    android:rowCount="5"
+    android:background="@color/colorBlack"
+    android:padding="16dp"
+    tools:context=".GameActivity">
+
+    <!-- Tic tac toe buttons -->
+    <ImageButton
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"/>
+    <ImageButton
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"/>
+    <ImageButton
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"/>
+    <ImageButton
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"/>
+    <ImageButton
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"/>
+    <ImageButton
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"/>
+    <ImageButton
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"/>
+    <ImageButton
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"/>
+    <ImageButton
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"/>
+
+    <!-- bottom part of screen -->
+    <ImageView
+        android:id="@+id/curPlayerImage"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight=".5"/>
+
+    <TextView
+        android:id="@+id/curPlayerText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnSpan="2"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight=".5"/>
+
+    <Button
+        android:id="@+id/playAgainButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnSpan="2"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight=".5"
+        android:visibility="invisible"
+        android:enabled="false"
+        android:text="@string/playAgainPrompt"/>
+
+    <Button
+        android:id="@+id/quitButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnSpan="1"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight=".5"
+        android:text="@string/quitPrompt"/>
+
+</GridLayout>

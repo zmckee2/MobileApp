@@ -32,12 +32,18 @@ public class MainActivity extends AppCompatActivity {
                 TextView resultPercent = (TextView) findViewById(R.id.resultPercent);
                 TextView finalPercent = (TextView) findViewById(R.id.resultGrade);
 
-                GradeCalculator calculator = new GradeCalculator(minAvgGrade, curAvgGrade, finalWeight);
-                float requiredGrade = calculator.calculateFinalGrade();
+                    GradeCalculator calculator = new GradeCalculator(minAvgGrade, curAvgGrade, finalWeight);
+                float requiredGrade = 0.0f;
+                if(finalWeight != 0.0)
+                    requiredGrade = calculator.calculateFinalGrade();
                 String outputString;
                 if(requiredGrade > 100)
                     outputString = "There is no way for you to earn a";
-                resultPercent.setText(String.format("You need a score of %.2f on the final exam to earn a", requiredGrade));
+                else if(requiredGrade <= 0)
+                    outputString = "You don't even need to take the test to earn a";
+                else
+                    outputString = String.format(String.format("You need a score of %.2f on the final exam to earn a", requiredGrade));
+                resultPercent.setText(outputString);
                 finalPercent.setText(desiredGrade);
             }
         });
