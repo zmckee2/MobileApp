@@ -1,11 +1,15 @@
 package com.example.adapterviewfun;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -53,15 +57,51 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String selection = parent.getItemAtPosition(position).toString();
-                Toast.makeText(MainActivity.this, "book: " + selection, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MainActivity.this, "book: " + selection, Toast.LENGTH_SHORT).show();
+                //Alert Dialogs
+                //Using AlertDialog.Builder and using method changing
+                AlertDialog.Builder alertBuilder = new AlertDialog.Builder(MainActivity.this);
+                alertBuilder.setTitle("Item Clicked")
+                        .setMessage(selection)
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener(){
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(MainActivity.this, "OK Clicked", Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .setNegativeButton("Nuh Uh", null);
+                alertBuilder.show(); //Like toast, you need show to display the alert
             }
         });
+
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener(){
+
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                return false; //Returns false if the event was not consumed.
+                              //Will pass event off to click listener to handle the click
+            }
+        });
+
 
         List<Book> books = new ArrayList<>();
         books.add(new Book(20, "me book", "me"));
         books.add(new Book(30, "ur book", "u"));
         books.add(new Book(40, "our book", "us"));
+        //Now that we have a custom data source, we need to make or use an adapter to get this data onto our UI
+        //In our case, we're using an array adapter
 
+        ArrayAdapter<Book> arrayAdapter = new ArrayAdapter<Book>(
+            this, //Reference to current activity
+            android.R.layout.simple_list_item_1, //The layout for each row in the list view/item in data source
+            books //Data source
+        );
+        listView.setAdapter(arrayAdapter);
+
+        //Dynamic data source
+        books.remove(1); //The adapter automatically notifies the UI
+        //Forcing an adapter view refresh
+        arrayAdapter.notifyDataSetChanged();
 
     }
 }
