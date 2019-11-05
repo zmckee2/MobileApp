@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">StudyApp1</string>
+    <string name="nextScreenPropmt">Go To Next Screen</string>
+    <string-array name="colors">
+        <item>Red</item>
+        <item>Blue</item>
+        <item>Green</item>
+    </string-array>
+</resources>

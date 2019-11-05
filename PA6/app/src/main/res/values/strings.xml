@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">PA6</string>
+    <string name="new_note_prompt">Add New Note</string>
+    <string-array name="note_types">
+        <item>Personal</item>
+        <item>School</item>
+        <item>Work</item>
+        <item>Other</item>
+    </string-array>
+</resources>
