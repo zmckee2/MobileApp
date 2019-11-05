@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.ActionMode;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         //Create an array adapter
         //Run and make sure you can see it
 
-        ListView root = new ListView(this);
+        final ListView root = new ListView(this);
         List<String> candies = new ArrayList<String>();
         candies.add("Candy corn");
         candies.add("Twix");
@@ -50,27 +51,42 @@ public class MainActivity extends AppCompatActivity {
         root.setMultiChoiceModeListener(new AbsListView.MultiChoiceModeListener() {
             @Override
             public void onItemCheckedStateChanged(ActionMode mode, int position, long id, boolean checked) {
-
+                //Called any time a user selects or deselects an item in the list view
+                int numChecked = root.getCheckedItemCount();
+                mode.setTitle(numChecked + " selected"); //This changes the text of the context menu
             }
 
             @Override
             public boolean onCreateActionMode(ActionMode mode, Menu menu) {
-                return false;
+                MenuInflater menuInflater = getMenuInflater();
+                menuInflater.inflate(R.menu.content_menu, menu);
+                return true;
             }
 
             @Override
             public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
+                //Not needed for PA7
                 return false;
             }
 
             @Override
             public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
+                //determine which menu item was clicked in CAM
+                switch(item.getItemId())
+                {
+                    case R.id.trashMenuItem:
+                        //root.getCheckedItemPositions to get the selected items
+                        Toast.makeText(MainActivity.this, "TODO: delete an item", Toast.LENGTH_SHORT).show();
+                        mode.finish(); //Exit CAM
+                        return true;
+
+                }
                 return false;
             }
 
             @Override
             public void onDestroyActionMode(ActionMode mode) {
-
+                //Not needed for PA7
             }
         });
 
