@@ -18,10 +18,19 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private static final int NEW_NOTE_REQUEST_CODE = 10;
+    static final int listViewId = View.generateViewId();
+    List<Note> notes;
+    ArrayAdapter<Note> noteAdapter;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == RESULT_OK && requestCode == NEW_NOTE_REQUEST_CODE){
+            String title = data.getStringExtra("title");
+            String content = data.getStringExtra("content");
+            String type = data.getStringExtra("type");
+            addNewNote(title, content, type);
+        }
     }
 
     @Override
@@ -48,11 +57,19 @@ public class MainActivity extends AppCompatActivity {
         root.addView(addNote);
 
         ListView noteView = new ListView(this);
-        List<Note> notes = new ArrayList<Note>();
-        ArrayAdapter<Note> noteAdapter = new ArrayAdapter<Note>(this, android.R.layout.simple_list_item_1, notes);
+        noteView.setId(listViewId);
+        notes = new ArrayList<Note>();
+        noteAdapter = new ArrayAdapter<Note>(this, android.R.layout.simple_list_item_1, notes);
         noteView.setAdapter(noteAdapter);
         root.addView(noteView);
 
         setContentView(root);
+    }
+
+    private void addNewNote(String title, String content, String type)
+    {
+        Note newNote = new Note(title, content, type);
+        notes.add(newNote);
+        noteAdapter.notifyDataSetChanged();
     }
 }
