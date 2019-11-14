@@ -27,15 +27,15 @@ public class MainActivity extends AppCompatActivity {
         ~ Then open with DB browser                               ~
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
         ContactOpenHelper openHelper = new ContactOpenHelper(this);
-        Contact contact = new Contact("Spike", "509-509-5095");
+        Contact contact = new Contact("not spike", "509-509-5095");
         openHelper.insertContact(contact);
-
 
         //For simple debugging only, not wiring this up to the database
         //This would be inefficient compared to directly wiring the cursor
-        //List<Contact> contacts = openHelper.getSelectAllContactsList();
-        //Log.d(TAG, "onCreate: " + contacts);
 
+        openHelper.updateContactById(24, contact);
+        List<Contact> contacts = openHelper.getSelectAllContactsList();
+        Log.d(TAG, "onCreate: " + contacts);
         //Gonna wire up the list view directly to the cursor
         //SimpleCursorAdapter
         Cursor cursor = openHelper.getSelectAllContactsCursor();
@@ -48,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
                 new int[] {android.R.id.text1}, //ids of TextViews to put the data in
                 0 //Leave default
         );
+
+
 
         listView.setAdapter(cursorAdapter);
         //Starting that databases

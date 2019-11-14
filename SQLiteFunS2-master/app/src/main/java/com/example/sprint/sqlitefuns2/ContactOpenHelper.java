@@ -66,7 +66,7 @@ public class ContactOpenHelper extends SQLiteOpenHelper {
     {
         //What is a cursor?
         //A cursor is used to navigate through results from a query
-        //Works simular to a file cursor
+        //Works similar to a file cursor
 
         //Query: SELECT * FROM tableContacts
         String sqlSelectAll = "SELECT * FROM " + TABLE_CONTACTS;
@@ -99,17 +99,26 @@ public class ContactOpenHelper extends SQLiteOpenHelper {
             Contact contact = new Contact(id, name, phone, imageResource);
             contactList.add(contact);
         }
-
         return contactList;
     }
 
     public void updateContactById(int id, Contact newContact)
     {
-
+        String sqlUpdate = "UPDATE " + TABLE_CONTACTS +
+                           " SET " + NAME + "='" + newContact.getName() + "', " +
+                               PHONE_NUMBER + "='" + newContact.getPhoneNumber() + "' " +
+                           "WHERE " + ID + "=" + id;
+        Log.d(TAG, "updateContactById: " + sqlUpdate);
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL(sqlUpdate);
+        db.close(); //Good practice to close the database so you don't lock it for writing
     }
 
     public void deleteAllContacts()
     {
-
+        String sqlDelete = "DELETE FROM " + TABLE_CONTACTS;
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL(sqlDelete);
+        db.close(); //Good practice to close the database so you don't lock it for writing
     }
 }
