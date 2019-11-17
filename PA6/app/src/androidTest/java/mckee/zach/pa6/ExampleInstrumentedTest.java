@@ -1,4 +1,4 @@
-package mckee.zach.pa6;
+package mckee.zach.PA7;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("mckee.zach.pa6", appContext.getPackageName());
+        assertEquals("mckee.zach.PA7", appContext.getPackageName());
     }
 }

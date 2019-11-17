@@ -1,4 +1,4 @@
-package mckee.zach.pa6;
+package mckee.zach.PA7;
 
 import org.junit.Test;
 
