@@ -29,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        FlickrApi flickrApi = new FlickrApi(this);
+        flickrApi.fetchInterestingPhotos();
     }
 
     @Override
