@@ -1,4 +1,13 @@
-package mckee.zach.pa6;
+/**
+ * This program contains the behavior for writing notes
+ * CPSC 312-02, Fall 2019
+ * Programming Assignment #6
+ * No sources to cite
+ *
+ * @author Zach McKee
+ * @version v1.0 11/6/19
+ */
+package mckee.zach.PA7;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,6 +27,7 @@ public class NoteActivity extends AppCompatActivity {
     static final int noteTypesID = View.generateViewId();
     static final int contentEditId = View.generateViewId();
     static final int finishButtonId = View.generateViewId();
+    int i = -1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,8 +82,8 @@ public class NoteActivity extends AppCompatActivity {
                 Spinner noteType = findViewById(noteTypesID);
                 String title = titleEdit.getText().toString();
                 String content = contentEdit.getText().toString();
-                if(title == null || content == null || title.equals("") || content.equals("")) {
-                    Toast.makeText(NoteActivity.this, "Please enter a title and some content", Toast.LENGTH_SHORT).show();
+                if(title == null || title.equals("")) {
+                    Toast.makeText(NoteActivity.this, "Please enter a title", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 String type = noteType.getSelectedItem().toString();
@@ -81,6 +91,7 @@ public class NoteActivity extends AppCompatActivity {
                 result.putExtra("title", title);
                 result.putExtra("content", content);
                 result.putExtra("type", type);
+                result.putExtra("index", i);
                 setResult(RESULT_OK, result);
                 finish();
 
@@ -88,8 +99,19 @@ public class NoteActivity extends AppCompatActivity {
         });
         root.addView(finishButton, finishButtonParams);
 
+
+        Intent intent = getIntent();
+        if(intent != null){
+            String title = intent.getStringExtra("title");
+            if(!(title == null)){
+                String content = intent.getStringExtra("content");
+                String type = intent.getStringExtra("type");
+                i = intent.getIntExtra("index", -1);
+                titleEdit.setText(title);
+                contentEdit.setText(content);
+                noteTypes.setSelection(spinnerAdapter.getPosition(type));
+            }
+        }
         setContentView(root);
-
-
     }
 }

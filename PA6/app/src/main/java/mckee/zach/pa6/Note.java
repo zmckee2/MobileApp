@@ -1,4 +1,13 @@
-package mckee.zach.pa6;
+/**
+ * This program contains the state and behavior for a note object
+ * CPSC 312-02, Fall 2019
+ * Programming Assignment #6
+ * No sources to cite
+ *
+ * @author Zach McKee
+ * @version v1.0 11/6/19
+ */
+package mckee.zach.PA7;
 
 public class Note {
     private String title;
