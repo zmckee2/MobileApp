@@ -11,9 +11,15 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    List<InterestingPhoto> photos;
+    int curIndex;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,8 +31,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                loadNextPhoto();
             }
         });
 
@@ -54,5 +59,26 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void recieveInteresingPhoto(List<InterestingPhoto> interestingPhotos) {
+        photos = interestingPhotos;
+        curIndex = 0;
+        loadNextPhoto();
+    }
+
+    private void loadNextPhoto() {
+        if (photos != null && photos.size() > 0){
+            TextView titleText = findViewById(R.id.titleTextView);
+            TextView dateText = findViewById(R.id.dateTextView);
+            InterestingPhoto curPhoto = photos.get(curIndex);
+            titleText.setText(curPhoto.getTitle());
+            dateText.setText(curPhoto.getDateTaken());
+
+            curIndex++;
+            curIndex %= photos.size();
+        } else {
+            Toast.makeText(this, "Please wait for the images to load", Toast.LENGTH_SHORT).show();
+        }
     }
 }
